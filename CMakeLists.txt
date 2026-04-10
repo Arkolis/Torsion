@@ -14,13 +14,13 @@ include_directories(src/wxWidgets/contrib/include)
 
 #include(${CMAKE_CURRENT_SOURCE_DIR}/src/tinyxml2/CMakeLists.txt)
 
-set(TINYXML2_SRC
-	src/tinyxml2/tinyxml2.cpp
-	src/tinyxml2/tinyxml2.h
-)
-add_library(tinyxml2 STATIC ${TINYXML2_SRC})
-
-include_directories(src/tinyxml2)
+#set(TINYXML2_SRC
+#	src/tinyxml2/tinyxml2.cpp
+#	src/tinyxml2/tinyxml2.h
+#)
+#add_library(tinyxml2 STATIC ${TINYXML2_SRC})
+#
+include_directories(src/tinyxml2/)
 
 # set(WXWIDGETS_SRC
 	
@@ -216,6 +216,7 @@ set(TORSION_SRC
 	src/Torsion/Torsion.rc2
 	
 	# TinyXML2
+	src/tinyxml2/tinyxml2.cpp
 	src/tinyxml2/tinyxml2.h
 )
 

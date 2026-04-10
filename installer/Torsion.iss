@@ -4,7 +4,11 @@
 
 [Setup]
 AppName=Torsion
+<<<<<<< Updated upstream
 AppVerName=Torsion 1.1.2
+=======
+AppVerName=Torsion 1.2.20551
+>>>>>>> Stashed changes
 AppPublisher= Sickhead Games, LLC
 AppPublisherURL=http://www.sickheadgames.com/
 AppSupportURL=https://github.com/SickheadGames/Torsion/issues

@@ -6,7 +6,7 @@
 #define TORSION_XMLFILE_H
 #pragma once
 #include <string>
-#include "tinyxml2.h"
+#include "..\tinyxml2\tinyxml2.h"
 //#include "MarkupSTL.h"
 using namespace tinyxml2;
 

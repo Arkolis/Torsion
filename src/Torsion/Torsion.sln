@@ -244,8 +244,8 @@ Global
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.DLL Universal Unicode Release|x64.Build.0 = Debug-Dll|x64
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.DLL Universal Unicode Release|x86.ActiveCfg = Debug-Dll|Win32
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.DLL Universal Unicode Release|x86.Build.0 = Debug-Dll|Win32
-		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x64.ActiveCfg = Release-Lib|x64
-		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x64.Build.0 = Release-Lib|x64
+		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x64.ActiveCfg = Release-Lib|Win32
+		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x64.Build.0 = Release-Lib|Win32
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x86.ActiveCfg = Release|Win32
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release|x86.Build.0 = Release|Win32
 		{D1C528B6-AA02-4D29-9D61-DC08E317A70D}.Release-Dll|x64.ActiveCfg = Release-Dll|x64
