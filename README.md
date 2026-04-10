@@ -4,6 +4,8 @@ Torsion is a powerful development environment for creating TorqueScript based ga
 
 **WARNING:** Torsion currently needs a [new XML libary](https://github.com/SickheadGames/Torsion/issues/1) and possibly an [update of VisualStudio](https://github.com/SickheadGames/Torsion/issues/7) before it can compile and run again.
 
+Fork can successfully build with VS2022 and using the tinyxml2. Some of this might be broken so please let me know.
+
 ## Documentation and Help
 
 The documentation can be found [here in the repo](/docs).
