@@ -14,17 +14,17 @@
     <ProjectGuid>{6A1EC3A9-9AB3-4F16-B983-0145510FD809}</ProjectGuid>
     <RootNamespace>Torsion</RootNamespace>
     <Keyword>Win32Proj</Keyword>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
@@ -54,11 +54,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-<<<<<<< Updated upstream
       <AdditionalIncludeDirectories>..\..\..\tinyxml2;..\wxWidgets\include;..\wxWidgets\lib\mswd;..\wxWidgets\contrib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-=======
-      <AdditionalIncludeDirectories>..\Torsion\bin\tinyxml2;..\wxWidgets\include;..\wxWidgets\lib\mswd;..\wxWidgets\contrib\include;..\tinyxml2\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> Stashed changes
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;__WXDEBUG__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -69,7 +65,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>comctl32.lib;tinyxml2.lib;wxbase26d.lib;wxmsw26d_core.lib;wxmsw26d_adv.lib;wxbase26d_net.lib;wxmsw26d_stc.lib;wxmsw27d_propgrid.lib;wxregexd.lib;wxjpegd.lib;Ws2_32.lib;Rpcrt4.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>.\$(Configuration);..\wxWidgets\lib\vc_lib;..\Torsion\bin\tinyxml2\;..\tinyxml2\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\tinyxml2;.\$(Configuration);..\wxWidgets\lib\vc_lib;.\bin\tinyxml2;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(OutDir)torsion_d.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
