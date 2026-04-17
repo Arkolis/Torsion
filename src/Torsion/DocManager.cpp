@@ -45,7 +45,7 @@ DocManager::DocManager()
    // wxFileHistorys which can be associated to different
    // wxDocTemplates.
    m_ProjectHistory = new wxFileHistory( 5, tsID_PROJECT1 );
-
+   
    UpdateScriptFileTemplates();
 }
 

@@ -55,7 +55,7 @@ class MainFrame : public wxDocMDIParentFrame
       virtual bool Destroy();
 
       DocManager *GetDocumentManager() const { return m_DocManager; }
-
+      
       ScriptView* OpenFile( const wxString& FullPath, int ZeroBasedLine = -1 );
       ScriptDoc* GetOpenDoc( const wxString& FullPath );
       ScriptView* GetOpenView( const wxString& FullPath );
@@ -194,7 +194,7 @@ class MainFrame : public wxDocMDIParentFrame
       WatchCtrl* GetWatchWindow() { return m_WatchWindow; }
       FindResultsCtrl* GetFindWindow() { return m_FindWindow; }
       BreakpointsPanel* GetBreakpointsPanel() { return m_Breakpoints; }
-
+      
       void OnSysColourChanged( wxSysColourChangedEvent& event );
 
       virtual void DoMenuUpdates(wxMenu* menu);

@@ -83,6 +83,8 @@ void AppPrefs::LoadFromString( const wxChar* Buffer )
 
    m_ExportsColor = Xml.GetColorElem( "ExportsColor", wxColour( 0, 0, 128 ) );
 
+   m_WinColor = Xml.GetColorElem("WinColor", wxColour(255,255,255 ) );
+
    m_BgColor = Xml.GetColorElem( "BgColor", wxColour( 255,255,255 ) );
 
    m_DefaultColor = Xml.GetColorElem( "DefaultColor", wxColour( 0,0,0 ) );
@@ -164,7 +166,7 @@ void AppPrefs::LoadFromString( const wxChar* Buffer )
    m_LastProject = Xml.GetStringElem( "LastProject", wxEmptyString );
 
    m_ScriptExts.Empty();
-   wxString exts = Xml.GetStringElem( "ScriptExtensions", "cs,gui,mis,t2d" );
+   wxString exts = Xml.GetStringElem( "ScriptExtensions", "cs,gui,mis,t2d,tscript,taml" );
    SetScriptExtsString( exts );
 
    m_DSOExts.Empty();
@@ -278,7 +280,7 @@ bool AppPrefs::Save( const wxString& Path )
 	Xml.AddAttrib( "color", Xml.ColorToString( m_ReservedColor ) );
 
 	Xml.AddElem( "ExportsColor", Xml.ColorToString( m_ExportsColor ) );
-
+   Xml.AddColorElem("WinColor", m_WinColor);
    Xml.AddColorElem( "BgColor", m_BgColor );
 
    Xml.AddColorElem( "DefaultColor", m_DefaultColor );

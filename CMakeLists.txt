@@ -12,7 +12,7 @@ include(${wxWidgets_USE_FILE})
 include_directories(src/wxWidgets/include)
 include_directories(src/wxWidgets/contrib/include)
 
-#include(${CMAKE_CURRENT_SOURCE_DIR}/src/tinyxml2/CMakeLists.txt)
+include(${CMAKE_CURRENT_SOURCE_DIR}/src/tinyxml2/CMakeLists.txt)
 
 #set(TINYXML2_SRC
 #	src/tinyxml2/tinyxml2.cpp
@@ -20,26 +20,24 @@ include_directories(src/wxWidgets/contrib/include)
 #)
 #add_library(tinyxml2 STATIC ${TINYXML2_SRC})
 #
-include_directories(src/tinyxml2/)
+#include_directories(src/tinyxml2/)
 
-# set(WXWIDGETS_SRC
-	
-	
-	# #PropGrid
-	# src/wxWidgets/contrib/include/wx/propgrid/advprops.h
-	# src/wxWidgets/contrib/src/propgrid/advprops.cpp
-	# src/wxWidgets/contrib/include/wx/propgrid/extras.h
-	# src/wxWidgets/contrib/src/propgrid/extras.cpp
-	# src/wxWidgets/contrib/include/wx/propgrid/manager.h
-	# src/wxWidgets/contrib/src/propgrid/manager.cpp
-	# src/wxWidgets/contrib/include/wx/propgrid/odcombo.h
-	# src/wxWidgets/contrib/src/propgrid/odcombo.cpp
-	# src/wxWidgets/contrib/include/wx/propgrid/propgrid.h
-	# src/wxWidgets/contrib/src/propgrid/propgrid.cpp
-	# src/wxWidgets/contrib/include/wx/propgrid/propdev.h
-	# src/wxWidgets/contrib/src/propgrid/props.cpp
-# )
-# add_library(wxWidgets STATIC ${WXWIDGETS_SRC})
+set(WXWIDGETS_SRC
+	#PropGrid
+	src/wxWidgets/contrib/include/wx/propgrid/advprops.h
+	src/wxWidgets/contrib/src/propgrid/advprops.cpp
+	src/wxWidgets/contrib/include/wx/propgrid/extras.h
+	src/wxWidgets/contrib/src/propgrid/extras.cpp
+	src/wxWidgets/contrib/include/wx/propgrid/manager.h
+	src/wxWidgets/contrib/src/propgrid/manager.cpp
+	src/wxWidgets/contrib/include/wx/propgrid/odcombo.h
+	src/wxWidgets/contrib/src/propgrid/odcombo.cpp
+	src/wxWidgets/contrib/include/wx/propgrid/propgrid.h
+	src/wxWidgets/contrib/src/propgrid/propgrid.cpp
+	src/wxWidgets/contrib/include/wx/propgrid/propdev.h
+	src/wxWidgets/contrib/src/propgrid/props.cpp
+)
+add_library(wxWidgets STATIC ${WXWIDGETS_SRC})
 
 set(TORSION_SRC
 	# Sources

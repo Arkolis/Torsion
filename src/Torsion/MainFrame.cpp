@@ -253,7 +253,6 @@ bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& tit
 
    // Store it so we don't have to cast it later.
    m_DocManager = manager;
-
    SetMinSize( wxSize( 160, 100 ) );
 
    DragAcceptFiles( true );
@@ -2110,7 +2109,6 @@ bool MainFrame::ProcessEvent(wxEvent& event)
             projectView->ProcessEvent( event ) )
          return true;
    }
-
    // Neither the project or the active view handled
    // the message... let the doc manager get a crack.
    if ( m_docManager->ProcessEvent( event ) )
@@ -2833,4 +2831,3 @@ void MainFrame::SendHintToAllViews( wxObject* hint, bool scriptViewsOnly )
       doc->UpdateAllViews( NULL, hint );
    }
 }
-

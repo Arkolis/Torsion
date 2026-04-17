@@ -3,7 +3,8 @@ Torsion TorqueScript IDE
 Copyright (c) Sickhead Games, LLC
 All Rights Reserved.
 http://www.sickheadgames.com
-
+  - 1.1.395 2026 Rebuil - Arkolis
+  * Adding additional options and graphical changes.
 
   - 1.1.392 Final - February 28th, 2008 -
   

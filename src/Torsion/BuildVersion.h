@@ -23,7 +23,8 @@
 //#define tsBUILDVER_BUILD	3930
 #define tsBUILDVER_NAME    "Final"
 #define tsBUILDVER_RES     tsBUILDVER_MAJOR, tsBUILDVER_MINOR, tsBUILDVER_FIX
-#define tsBUILDVER_RESSTR	"1.2.0.20553"
+#define tsBUILDVER_RESSTR	"1.1.395"
+//1.1.395 - Open source version w/ VS 2022
 
 
 inline wxString tsGetFullBuildString()

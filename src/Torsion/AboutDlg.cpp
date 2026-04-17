@@ -70,7 +70,7 @@ bool AboutDlg::Create( wxWindow* parent, wxWindowID id, const wxString& caption,
 
 ////@begin AboutDlg creation
    wxDialog::Create( parent, id, caption, pos, size, style );
-
+   
    CreateControls();
    if (GetSizer())
    {

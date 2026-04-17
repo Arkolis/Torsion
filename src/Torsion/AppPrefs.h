@@ -32,6 +32,9 @@ public:
 	const wxColour& GetDefaultColor() const { return m_DefaultColor; }
    void SetDefaultColor( const wxColour& color ) { SetAndDirtyProp( m_DefaultColor, color ); }
 
+   const wxColour& GetWinColor() const { return m_WinColor; }
+   void SetWinColor(const wxColour& color) { SetAndDirtyProp(m_WinColor, color); }
+
    const wxColour& GetBgColor() const { return m_BgColor; }
    void SetBgColor( const wxColour& color ) { SetAndDirtyProp( m_BgColor, color ); }
 
@@ -67,7 +70,6 @@ public:
 
    const wxColour& GetSelColor() const { return m_SelColor; }
    void SetSelColor( const wxColour& color ) { SetAndDirtyProp( m_SelColor, color ); }
-
    const wxColour& GetSelBgColor() const { return m_SelBgColor; }
    void SetSelBgColor( const wxColour& color ) { SetAndDirtyProp( m_SelBgColor, color ); }
 
@@ -242,6 +244,8 @@ protected:
 	bool		m_bDirty;
 
 	wxFont	m_DefaultFont;
+
+   wxColour m_WinColor;
 
    wxColour m_BgColor;
 

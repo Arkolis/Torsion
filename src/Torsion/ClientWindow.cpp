@@ -60,7 +60,7 @@ void ClientWindow::OnPaint( wxPaintEvent& event )
    int x = corner.x - ts_mono_logo.GetWidth() - 20;
    int y = corner.y - ts_mono_logo.GetHeight() - 20;
 
-   wxColor back = wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE );
+   wxColor back = wxSystemSettings::GetColour( wxSYS_COLOUR_APPWORKSPACE ); //Handles torsion logo background
    wxColor fore( back.Red() + 7, back.Green() + 7, back.Blue() + 7 );
    dc.SetTextForeground( back );
    dc.SetTextBackground( fore ); 

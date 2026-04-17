@@ -45,14 +45,14 @@ ProjectDoc::ProjectDoc()
       m_Address( "127.0.0.1" ),
       m_Port( 6060 ),
       m_Password( "password" ),
-      m_EntryScript( "main.cs" ),
+      m_EntryScript( "main.tscript" ),
       m_DebugHook( sm_DefaultHook ),
       m_SearchURL( wxEmptyString ), //sm_SearchURL ),
       m_SearchProduct( "TGE" ),
       m_SearchVersion( "HEAD" ),
       m_ExecModifiedScripts( true )
 {
-   SetScannerExtsString( "cs;gui" );
+   SetScannerExtsString( "tscript;gui" );
 }
 
 ProjectDoc::~ProjectDoc()

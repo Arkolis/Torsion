@@ -187,6 +187,10 @@ void SettingsDlg::CreateControls()
    id = m_PropGrid->Append( wxStringProperty(wxT("Excluded Folders"), wxPG_LABEL, tsGetPrefs().GetExcludedFoldersString()) );
    m_PropGrid->SetPropertyHelpString( id, wxT("A semicolon separated list of the folders which are always excluded from the project tree view.") );
 
+   m_PropGrid->Append(wxPropertyCategory(wxT("Interface"), wxT("Interface")));
+   id = m_PropGrid->Append(TSColourProperty(wxT("Window Color"), wxPG_LABEL, tsGetPrefs().GetWinColor()));
+   m_PropGrid->SetPropertyHelpString(id, wxT("The background color of the main window."));
+
    m_PropGrid->Append( wxPropertyCategory(wxT("Syntax Highlighting"),wxT("Editor")) );
    id = m_PropGrid->Append( wxFontProperty(wxT("Font"), wxPG_LABEL, tsGetPrefs().GetDefaultFont()) );
    m_PropGrid->SetPropertyHelpString( id, wxT("The font used for all text in the script editor window.") );
@@ -338,6 +342,8 @@ void SettingsDlg::OnOkClick( wxCommandEvent& event )
 
    tsGetPrefs().SetTabWidth( m_PropGrid->GetPropertyValue( "Tabs.Size" ).GetLong() );
    tsGetPrefs().SetUseTabs( !m_PropGrid->GetPropertyValue( "Tabs.Insert Spaces" ).GetBool() );
+
+   tsGetPrefs().SetWinColor(*wxGetVariantCast(m_PropGrid->GetPropertyValue("Interface.Window Color"), wxColour ) );
 
    tsGetPrefs().SetBgColor( *wxGetVariantCast( m_PropGrid->GetPropertyValue( "Editor.Background Color" ), wxColour ) );
    tsGetPrefs().SetBgColor( *wxGetVariantCast( m_PropGrid->GetPropertyValue( "Editor.Background Color" ), wxColour ) );
