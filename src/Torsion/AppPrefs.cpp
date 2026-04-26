@@ -145,7 +145,7 @@ void AppPrefs::LoadFromString( const wxChar* Buffer )
 
    m_FindTypes.Empty();
    if ( Xml.GetArrayStringElems( m_FindTypes, "FindTypes", "Type" ) < 1 )
-      m_FindTypes.Add( "*.cs;*.gui;*.mis;*.t2d" );
+      m_FindTypes.Add( "*.cs;*.gui;*.mis;*.t2d;*.tscript;*.taml" );
 
    m_FindPaths.Empty();
    Xml.GetArrayStringElems( m_FindPaths, "FindPaths", "Path" );
@@ -166,7 +166,7 @@ void AppPrefs::LoadFromString( const wxChar* Buffer )
    m_LastProject = Xml.GetStringElem( "LastProject", wxEmptyString );
 
    m_ScriptExts.Empty();
-   wxString exts = Xml.GetStringElem( "ScriptExtensions", "cs,gui,mis,t2d,tscript,taml" );
+   wxString exts = Xml.GetStringElem( "ScriptExtensions", "cs,gui,mis,t2d,tscript" );
    SetScriptExtsString( exts );
 
    m_DSOExts.Empty();
@@ -197,21 +197,25 @@ void AppPrefs::LoadFromString( const wxChar* Buffer )
    }
 
    m_TextExts.Empty();
-   if ( Xml.GetArrayStringElems( m_TextExts, "TextExts", "Ext" ) == -1 ) {
-
-      /*
-      TODO: Support opening text files!
-      m_TextExts.Add( "txt" );
-      m_TextExts.Add( "ini" );
-      m_TextExts.Add( "log" );
-      m_TextExts.Add( "readme" );
-      m_TextExts.Add( "html" );
-      m_TextExts.Add( "htm" );
-      m_TextExts.Add( "hlsl" );
-      m_TextExts.Add( "bat" );
-      m_TextExts.Add( "xml" );
-      */
-   }
+   exts = Xml.GetStringElem("TextExtensions", "txt,ini,log,readme,html,htm,hlsl,bat,xml,taml");
+   SetTextExtsString(exts);
+   //Removed old method as it doesn't look implemented. Following (Hijacking) the ScriptExtensions method ~Ark
+   //m_TextExts.Empty();
+   //if ( Xml.GetArrayStringElems( m_TextExts, "TextExts", "Ext" ) == -1 ) {
+   //
+   //   /*
+   //   TODO: Support opening text files!
+   //   m_TextExts.Add( "txt" );
+   //   m_TextExts.Add( "ini" );
+   //   m_TextExts.Add( "log" );
+   //   m_TextExts.Add( "readme" );
+   //   m_TextExts.Add( "html" );
+   //   m_TextExts.Add( "htm" );
+   //   m_TextExts.Add( "hlsl" );
+   //   m_TextExts.Add( "bat" );
+   //   m_TextExts.Add( "xml" );
+   //   */
+   //}
 
    m_UseTabs = Xml.GetBoolElem( "UseTabs", false );
    m_TabWidth = Xml.GetIntElem( "TabWidth", 3 );
@@ -674,6 +678,40 @@ bool AppPrefs::SetScriptExtsString( const wxString& value )
    return false; 
 }
 
+bool AppPrefs::SetTextExtsString(const wxString& value)
+{
+   wxStringTokenizer toker(value, ",;", wxTOKEN_STRTOK);
+   wxArrayString exts;
+   wxString ext;
+   while (toker.HasMoreTokens()) {
+
+      ext = toker.GetNextToken();
+      ext.Trim(true);
+      ext.Trim(false);
+
+      if (ext.IsEmpty())
+         continue;
+
+      if (ext[0] == '.')
+         ext.Remove(0, 1);
+
+      if (!ext.IsEmpty())
+         exts.Add(ext);
+   }
+
+   // Sort the extensions alphabetically.
+   //exts.Sort();
+
+   if (exts != m_TextExts)
+   {
+      m_TextExts = exts;
+      m_bDirty = true;
+      return true;
+   }
+
+   return false;
+}
+
 wxString AppPrefs::GetDefaultScriptExtension() const
 {
    wxString ext( "cs" );
@@ -688,6 +726,26 @@ wxString AppPrefs::GetScriptExtsString() const
 
    for ( int i=0; i < m_ScriptExts.GetCount(); i++ )
       exts << m_ScriptExts[i] << "; ";
+
+   exts.RemoveLast(2);
+
+   return exts;
+}
+
+wxString AppPrefs::GetDefaultTextExtension() const
+{
+   wxString ext("txt");
+   if (m_TextExts.GetCount() > 0)
+      ext = m_TextExts[0];
+   return ext;
+}
+
+wxString AppPrefs::GetTextExtsString() const
+{
+   wxString exts;
+
+   for (int i = 0; i < m_TextExts.GetCount(); i++)
+      exts << m_TextExts[i] << "; ";
 
    exts.RemoveLast(2);
 

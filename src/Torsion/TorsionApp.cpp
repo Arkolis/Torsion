@@ -100,7 +100,7 @@ bool TorsionApp::OnInit()
    #ifndef __WXDEBUG__
       wxHandleFatalExceptions( true );
    #endif
-
+   
    // We don't want error dialogs from the wxWindows runtime!
 	delete wxLog::SetActiveTarget( new wxLogStderr() );
 
@@ -208,7 +208,7 @@ bool TorsionApp::OnInit()
    ts_MainFrame = new MainFrame;
    ts_MainFrame->Create( m_DocManager, NULL, GetAppName(),
       Position.GetPosition(), Position.GetSize() );
-
+   
    #ifndef __WXMAC__
       ts_MainFrame->Show(true);
    #endif

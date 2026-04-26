@@ -194,6 +194,11 @@ public:
    bool SetExcludedFolders( const wxString& exclude );
    wxString GetExcludedFoldersString() const;
 
+   const wxArrayString& GetTextExtensions() const { return m_TextExts; }
+   wxString GetDefaultTextExtension() const;
+   wxString GetTextExtsString() const;
+   bool SetTextExtsString(const wxString& exts);
+
    static int  GetStringsFromCombo( wxComboBox* combo, wxArrayString& output );
    static void AddStringsToCombo( wxComboBox* combo, const wxArrayString& output );
 

@@ -246,7 +246,7 @@ MainFrame::~MainFrame()
 bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& title, const wxPoint& pos, const wxSize& size )
 {
    if ( !wxDocMDIParentFrame::Create( manager, frame, wxID_ANY, title, pos, size, 
-      wxDEFAULT_FRAME_STYLE | wxFRAME_NO_WINDOW_MENU | wxCLIP_CHILDREN, _T( "TorsionMainFrame" ) ) )
+      wxDEFAULT_FRAME_STYLE | wxFRAME_NO_WINDOW_MENU | wxCLIP_CHILDREN , _T( "TorsionMainFrame" ) ) )
    {
       return false;
    }
@@ -278,7 +278,7 @@ bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& tit
       openMenu->AppendIconItem( wxID_OPEN,         _T( "&Script...\tCtrl+O" ), ts_open_document16 );
       fileMenu->Append( wxID_ANY, _T( "&Open" ), openMenu );
 
-      fileMenu->Append( wxID_CLOSE,        _T( "&Close\tCtrl+F4" ) );
+      fileMenu->Append( wxID_CLOSE,        _T( "&Close\tCtrl+W" ) ); //Changed from CTRL+F4
       fileMenu->Append( tsID_CLOSEPROJECT, _T( "Close P&roject" ) );
       fileMenu->AppendSeparator();
       fileMenu->AppendIconItem( wxID_SAVE,         _T( "&Save\tCtrl+S" ), ts_save16 );
@@ -417,7 +417,7 @@ bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& tit
       m_WindowMenu->Append( tsID_NEXTVIEW,      _T( "Next\tCtrl+Tab" ) );
       m_WindowMenu->Append( tsID_PREVIOUSVIEW,  _T( "Previous\tCtrl+Shift+Tab" ) );
       m_WindowMenu->AppendSeparator();
-      m_WindowMenu->Append( wxID_CLOSE_ALL,  _T( "C&lose All Files\tCtrl+Shift+F4" ) );
+      m_WindowMenu->Append( wxID_CLOSE_ALL,  _T( "C&lose All Files\tCtrl+Shift+W" ) ); //Changed from tCtrl+Shift+F4
       //m_WindowMenu->Append( tsID_WINDOW_FIRST, "", "", wxITEM_SEPARATOR ); 
       //m_WindowList.UseMenu( windowMenu );
    }
@@ -440,7 +440,7 @@ bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& tit
       #endif
    }
 
-   wxMenuBar *menu_bar = new tsMenuBar( wxNO_BORDER | wxCLIP_CHILDREN );
+   wxMenuBar* menu_bar = new tsMenuBar( wxNO_BORDER | wxCLIP_CHILDREN);
    menu_bar->Append(fileMenu, _T("&File"));
    menu_bar->Append(m_EditMenu, _T("&Edit"));
    menu_bar->Append(viewMenu, _T("&View"));
@@ -616,6 +616,7 @@ bool MainFrame::Create( DocManager* manager, wxFrame* frame, const wxString& tit
    chmFile.SetFullName( "Torsion.chm" );
    m_HelpController.Initialize( chmFile.GetFullPath() );
 
+   //UpdateColors(); //~Ark Dark mode attempt, need to just try for wxWidgets 3.x
    return true;
 }
 
@@ -1076,6 +1077,7 @@ void MainFrame::OnPreferences( wxCommandEvent& event )
 
       // Let the colors update on the find and output windows too.
       wxASSERT( GetOutputPanel() );
+      //UpdateColors(); //This works but there is a visible lag to when the colors get applied.
       GetOutputPanel()->m_Output->UpdatePrefs();
       GetFindWindow()->UpdatePrefs();
 
@@ -2831,3 +2833,34 @@ void MainFrame::SendHintToAllViews( wxObject* hint, bool scriptViewsOnly )
       doc->UpdateAllViews( NULL, hint );
    }
 }
+
+/*void MainFrame::UpdateColors()
+{
+   //Store the menu options
+   wxColor w = tsGetPrefs().GetWinColor();
+   
+   //Get the main frame and children
+   MainFrame *ts_MainFrame = tsGetMainFrame();
+   ts_MainFrame->SetBackgroundColour(w);
+   for (auto b : ts_MainFrame->GetChildren())
+   {
+      b->SetBackgroundColour(w);
+   }
+   //Get the menu bar and children
+   wxMenuBar *ts_MenuBar = GetMenuBar();
+   ts_MenuBar->SetBackgroundColour(w);
+   for (auto *menuitems : ts_MenuBar->GetChildren())
+   {
+      //this isn't working for the main menu background color.
+      menuitems->SetBackgroundColour(w);
+   }
+   //get the help bar and change color. Overridden by the OS overrides
+   wxToolBar *toolBar = GetToolBar();
+   toolBar->SetBackgroundColour(w);
+   for (auto *tb_Items : toolBar->GetChildren())
+   {
+      //this isn't working for the toolbar background color.
+      tb_Items->InheritsBackgroundColour();
+   }
+   //Get the Project sash and underlying pieces
+}*/

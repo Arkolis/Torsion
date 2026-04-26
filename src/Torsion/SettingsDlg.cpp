@@ -186,6 +186,8 @@ void SettingsDlg::CreateControls()
    m_PropGrid->SetPropertyHelpString( id, wxT("A semicolon separated list of the files and file extensions which are always excluded from the project tree view.") );
    id = m_PropGrid->Append( wxStringProperty(wxT("Excluded Folders"), wxPG_LABEL, tsGetPrefs().GetExcludedFoldersString()) );
    m_PropGrid->SetPropertyHelpString( id, wxT("A semicolon separated list of the folders which are always excluded from the project tree view.") );
+   id = m_PropGrid->Append(wxStringProperty(wxT("Text Extension"), wxPG_LABEL, tsGetPrefs().GetTextExtsString()));
+   m_PropGrid->SetPropertyHelpString(id, wxT("A semicolon separated list of extensions of Text files to associate and open with Torsion.") );
 
    m_PropGrid->Append(wxPropertyCategory(wxT("Interface"), wxT("Interface")));
    id = m_PropGrid->Append(TSColourProperty(wxT("Window Color"), wxPG_LABEL, tsGetPrefs().GetWinColor()));

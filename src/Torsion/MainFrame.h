@@ -196,7 +196,7 @@ class MainFrame : public wxDocMDIParentFrame
       BreakpointsPanel* GetBreakpointsPanel() { return m_Breakpoints; }
       
       void OnSysColourChanged( wxSysColourChangedEvent& event );
-
+      //void UpdateColors();
       virtual void DoMenuUpdates(wxMenu* menu);
       virtual bool ProcessEvent( wxEvent& event );
       virtual bool MSWTranslateMessage( WXMSG* msg );
