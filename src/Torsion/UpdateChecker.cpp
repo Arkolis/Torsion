@@ -18,7 +18,7 @@
 #endif 
 
 
-
+//This needs to be ripped out or pointed to Github
 UpdateChecker::UpdateChecker()
 {
 }

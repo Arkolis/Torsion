@@ -23,7 +23,7 @@
 #include "SettingsDlg.h"
 #include "TorsionApp.h"
 
-#include <wx/propgrid/propdev.h>
+#include <wx/propgrid/propdev.h> //Doesn't exist in the base wxWidgets. Going to need to convert this dialog to the base system for move into widgets 3.3.2
 #include <wx/propgrid/advprops.h>
 WX_PG_DECLARE_CUSTOM_COLOUR_PROPERTY_USES_WXCOLOUR(TSColourProperty)
 
@@ -189,9 +189,9 @@ void SettingsDlg::CreateControls()
    id = m_PropGrid->Append(wxStringProperty(wxT("Text Extension"), wxPG_LABEL, tsGetPrefs().GetTextExtsString()));
    m_PropGrid->SetPropertyHelpString(id, wxT("A semicolon separated list of extensions of Text files to associate and open with Torsion.") );
 
-   m_PropGrid->Append(wxPropertyCategory(wxT("Interface"), wxT("Interface")));
-   id = m_PropGrid->Append(TSColourProperty(wxT("Window Color"), wxPG_LABEL, tsGetPrefs().GetWinColor()));
-   m_PropGrid->SetPropertyHelpString(id, wxT("The background color of the main window."));
+   //m_PropGrid->Append(wxPropertyCategory(wxT("Interface"), wxT("Interface")));
+   //id = m_PropGrid->Append(TSColourProperty(wxT("Window Color"), wxPG_LABEL, tsGetPrefs().GetWinColor()));
+   //m_PropGrid->SetPropertyHelpString(id, wxT("The background color of the main window."));
 
    m_PropGrid->Append( wxPropertyCategory(wxT("Syntax Highlighting"),wxT("Editor")) );
    id = m_PropGrid->Append( wxFontProperty(wxT("Font"), wxPG_LABEL, tsGetPrefs().GetDefaultFont()) );

@@ -5,7 +5,7 @@
 [Setup]
 AppName=Torsion
 <<<<<<< Updated upstream
-AppVerName=Torsion 1.2.20569
+AppVerName=Torsion 1.2.20571
 =======
 AppVerName=Torsion 1.2.20551
 >>>>>>> Stashed changes

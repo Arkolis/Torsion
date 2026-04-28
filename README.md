@@ -1,25 +1,25 @@
-# Torsion
+# Visual Studio 2022
+This is a working build of Torsion based on the HumanGamer rework of Sickhead Games' original open source release. Solution files have been retargeted to Visual Studio 2022.
+Working on Binary Releases with the current integrations. ~Ark
 
+# Torsion
 Torsion is a powerful development environment for creating TorqueScript based games and mods.
 
-**WARNING:** Torsion currently needs a [new XML libary](https://github.com/SickheadGames/Torsion/issues/1) and possibly an [update of VisualStudio](https://github.com/SickheadGames/Torsion/issues/7) before it can compile and run again.
-
-Fork can successfully build with VS2022 and using the tinyxml2. Some of this might be broken so please let me know.
+## Current Plans:
+* Work toward using modern wxWidgets or an alternative UI system.
+* Work on expanding the base program's capabilities.
 
 ## Documentation and Help
 
 The documentation can be found [here in the repo](/docs).
 
-For further help and questions feel free to [post an issue on GitHub](https://github.com/SickheadGames/Torsion/issues) or come [![join the chat at https://gitter.im/SickheadGames/Torsion](https://badges.gitter.im/SickheadGames/Torsion.svg)](https://gitter.im/SickheadGames/Torsion)
+For further help and questions feel free to [post an issue on GitHub](https://github.com/SickheadGames/Torsion/issues)
 
 If you want to improve Torsion please read [our contributors guide](CONTRIBUTING.md) first!
 
-## Support Sickhead!
+## Support
 
-If you found this code/art or anything else we've done useful, please consider  
-sending us a tip.  It really does help pay for coffee, soda, pizza, and beers. :)
+Removed this section for now.
 
-  [ ![Tip Sickhead!](https://raw.githubusercontent.com/SickheadGames/AdventureKit/master/documentation/tip.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3X589QTLX434G)
-
-  
-Thanks for your support!
+## Sickhead Games!
+This is originally the work of Sickhead Games.[See their GitHub for more information.](https://github.com/SickheadGames/Torsion/)

@@ -986,6 +986,7 @@ void MainFrame::UpdateToolsMenu()
    m_ToolsMenu->Append( tsID_TOOLS_EXTERNAL_TOOLS,  _T( "&External Tools..." ) );
    m_ToolsMenu->AppendSeparator();
    m_ToolsMenu->Append( tsID_TOOLS_PREFERENCES,  _T( "&Preferences..." ) );
+   m_ToolsMenu->Append(tsID_TOOLS_PREFERENCES, _T("&Preferences rebuild"));
 }
 
 void MainFrame::OnExecTool( wxCommandEvent& event )
